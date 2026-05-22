@@ -1,6 +1,7 @@
 [Unit]
 Description=Gotify desktop notification listener
-After=network-online.target
+After=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
@@ -9,4 +10,4 @@ Restart=on-failure
 RestartSec=5
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
