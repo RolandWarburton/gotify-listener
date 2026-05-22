@@ -3,6 +3,7 @@ Description=Gotify desktop notification listener
 After=network-online.target
 
 [Service]
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
 ExecStart=%h/.local/bin/gotify-listen
 Restart=on-failure
 RestartSec=5
