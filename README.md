@@ -11,6 +11,9 @@ Ensure you have `/etc/gotify/cli.json` configured.
 }
 ```
 
+The application is designed to run in systemd under user context.
+Install the systemd file provided and check logs using `systemctl --user status gotify-listen`
+
 ## Testing
 
 Generate an APP token in the gotify web UI to authorize pushing notifications.
@@ -18,6 +21,3 @@ Generate an APP token in the gotify web UI to authorize pushing notifications.
 ```bash
 GOTIFY_TOKEN=a8ms-A8ADanQR7G1 gotify push -t "Test" "Hello world"
 ```
-
-The application is designed to run in systemd under user context.
-Install the systemd file provided and check logs using `systemctl --user status gotify-listen`
